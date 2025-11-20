@@ -14,27 +14,42 @@ import java.time.Duration;
 //you explicitly switch the WebDriver’s context to that frame.hence you need to tell to the Selenium
 //Hey! it's a frame
 
+//We can switch into frames by using three methods:
+//1.By using WebElement
+//2.By using index of the frame
+//3.By using String id or name of the iframe during inspect the HTML DOM.(if the developer provide during
+// Web Development)
+
 public class FrameTest {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://jqueryui.com/droppable/");
+
+        //It will give the count of the total iframes in your application.
+        System.out.println(driver.findElements(By.tagName("iframe")).size());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
         //If we have more than one frame on a webpage like 3 Frames then We can switch in different frames
-        //by using index-frame(0),second frame-frame(1) and so on.......
+        //by using index-first frame -frame(0),second frame-frame(1) and so on.......
 //        driver.switchTo().frame(0);
         //There are three switch statements below: All are same.......
 //        driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame")));
         // cssSelector-   tagName.className
+
         driver.switchTo().frame(driver.findElement(By.cssSelector("iframe[class='demo-frame']")));
-        //driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
+        // driver.switchTo().frame(driver.findElement(By.className("demo-frame")));
 //        driver.findElement(By.id("draggable")).click();
+
         Actions a=new Actions(driver);
         Thread.sleep(2000);
         WebElement source=driver.findElement(By.id("draggable"));
         Thread.sleep(2000);
         WebElement target=driver.findElement(By.id("droppable"));
         a.dragAndDrop(source,target).build().perform();
+
+        //Webdriver will come back to the normal window,and you can do your normal operations outside the iframe.
+        driver.switchTo().defaultContent();
 
 
         driver.quit();
