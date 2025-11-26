@@ -1,4 +1,4 @@
-package Selenium_Practice;
+package Selenium_Practice.RahulShettyAllCodes;
 //By Rahul Shetty
 //If you want to learn more about frames then refer HandlingFrames1 class in the same package.
 import org.openqa.selenium.By;

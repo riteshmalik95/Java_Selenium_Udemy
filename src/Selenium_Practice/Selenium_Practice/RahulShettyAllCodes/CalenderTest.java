@@ -1,4 +1,4 @@
-package Selenium_Practice;
+package Selenium_Practice.RahulShettyAllCodes;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

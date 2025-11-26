@@ -1,4 +1,4 @@
-package Selenium_Practice;
+package Selenium_Practice.RahulShettyAllCodes;
 //By Rahul Shetty
 //Limiting WebDriver Scope
 import org.openqa.selenium.By;

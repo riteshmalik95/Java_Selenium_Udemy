@@ -1,4 +1,4 @@
-package Selenium_Practice;
+package Selenium_Practice.OtherCodes;
 import java.util.List;
 
 import org.openqa.selenium.By;
