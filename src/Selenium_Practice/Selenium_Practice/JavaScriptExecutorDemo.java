@@ -10,7 +10,7 @@ import org.testng.Assert;
 import java.util.List;
 
 public class JavaScriptExecutorDemo {
-    public static <JavaScriptExecutor> void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver=new ChromeDriver();
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
         driver.manage().window().maximize();
